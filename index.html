@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Netflix</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <img src="logo-netflix.png" alt="" width="50px">
+        </div>
+        <nav>
+            <a href="">Início</a>
+            <a href="">Séries</a>
+            <a href="">Filmes</a>
+            <a href="">Minha Lista</a>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <div class="conteudo">
+            <p class="titulo">Bruno e Bianca</p>
+            <p class="detalhes">
+                <span>04 DE SETEMBRO - 5 TEMPORADAS</span>
+                <span class="stars">
+                    <i class="fa-solid fa-star" style="color: #ff0000;"></i>
+                    <i class="fa-solid fa-star" style="color: #ff0000;"></i>
+                    <i class="fa-solid fa-star" style="color: #ff0000;"></i>
+                    <i class="fa-solid fa-star" style="color: #ff0000;"></i>
+                    <i class="fa-solid fa-star" style="color: #ff0000;"></i>
+                </span>
+            <p class="descricao">
+                O que começou como uma amizade inseparável, tornou-se, para ela, a principal razão para seguir em
+                frente. Entre os corredores da escola e os pequenos gestos do cotidiano, nasceu um sentimento silencioso, que ela preservou
+                por anos. O medo nunca foi o fim das aulas ou a mudança dos dias, mas a possibilidade de uma vida sem ele. <br>
+
+                Foi no isolamento da pandemia, em meio à distância, que o destino
+                decidiu inverter o jogo. A ausência dela transformou-se em um barulho impossível de ignorar, revelando que aquilo que sempre
+                esteve ao seu lado fazia falta de um jeito profundo. <br> 
+
+                Essa trajetória revela a doçura do primeiro amor entrelaçada com a maturidade de quem escolhe
+                permanecer. Mais do que uma história, esta é uma narrativa
+                sobre paciência, entrega e confiança no tempo certo. Uma descoberta de que, muitas vezes, o grande amor da nossa vida
+                cresce ao nosso lado, esperando o momento exato para que enfim se tornem um só.
+
+            </p>
+            <div class="botoes">
+                <button id="btn-continuar"> <i class="fa-solid fa-play"></i> Continuar </button>
+                <button id="btn-favorito"> <i class="fa-solid fa-star" id="favorito"></i> Favoritos </button>
+            </div>
+            </p>
+        </div>
+    </section>
+
+    <section class="filme">
+        <div id="intro-filme" class="intro-filme">
+            <p id="texto1" class="intro-texto">Em breve na Netflix...</p>
+            <p id="texto2" class="intro-texto">Baseado em uma história real. </p>
+            <p id="texto3" class="intro-texto">Bruno e Bianca</p>
+        </div>
+    </section>
+
+    <section class="momentos">
+        <h2> Nossos Melhores Momentos </h2>
+
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"> <img src="./imagens/foto1.jpeg"></div>
+                <div class="swiper-slide"> <img src="./imagens/foto2.jpeg"></div>
+                <div class="swiper-slide"> <img src="./imagens/foto3.jpeg"></div>
+                <div class="swiper-slide"> <img src="./imagens/foto4.jpeg"></div>
+                <div class="swiper-slide"> <img src="./imagens/foto5.jpeg"></div>
+                <div class="swiper-slide"> <img src="./imagens/foto6.jpeg"></div>
+                <div class="swiper-slide"> <img src="./imagens/foto8.jpeg"></div>
+                <div class="swiper-slide"> <img src="./imagens/foto9.jpeg"></div>
+                <div class="swiper-slide"> <img src="./imagens/foto10.jpeg"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        2026 - Bianca
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInterection: false,
+            },
+            slidesPerView: 2,
+            spaceBetween: 10,
+
+            breakpoints: {
+                600: {
+                    slidesPerView: 3,
+                },
+                900: {
+                    slidesPerView: 4,
+                }
+            }
+        });
+
+        //muda a cor da estrela dos favoritos ao clicar no botão
+        const botaoFavorito = document.getElementById("btn-favorito");
+        const estrela = document.getElementById("favorito");
+
+        botaoFavorito.addEventListener("click", () => {
+            estrela.classList.toggle("favoritado");
+        });
+
+
+        //filminho
+        const btnContinuar = document.getElementById("btn-continuar");
+        const intro = document.getElementById("intro-filme");
+        const texto1 = document.getElementById("texto1");
+        const texto2 = document.getElementById("texto2");
+        const texto3 = document.getElementById("texto3");
+
+        btnContinuar.addEventListener("click", () => {
+
+            intro.style.display = "flex";
+
+            // reset (caso clique mais de uma vez)
+            texto1.style.opacity = 0;
+            texto2.style.opacity = 0;
+            texto3.style.opacity = 0;
+
+            // aparece o primeiro texto
+            setTimeout(() => {
+                texto1.style.opacity = 1;
+            }, 500);
+
+            // aparece o segundo texto
+            setTimeout(() => {
+                texto2.style.opacity = 1;
+            }, 2500);
+
+            //aparece o terceiro texto
+            setTimeout(() => {
+                texto3.style.opacity = 1;
+            }, 5500);
+
+            // some automaticamente depois de tudo
+            setTimeout(() => {
+                intro.style.opacity = 0;
+
+                setTimeout(() => {
+                    intro.style.display = "none";
+                    intro.style.opacity = 1;
+                }, 1000);
+
+            }, 7500);
+        });
+    </script>
+</body>
+
+</html>
