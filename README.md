@@ -4,7 +4,7 @@
 Esse projeto foi desenvolvido para fins de estudo e prática de desenvolvimento front-end, utilizando como referência a interface da Netflix.
 
 ## 📎 Live Demo
-https://biancassp.github.io/projeto-netflix/
+👉 https://biancassp.github.io/projeto-netflix/
 
 ## 📌 Sobre o Projeto
 A página principal apresenta uma estrutura inspirada em plataformas de streaming com um **carrosel de imagens interativo**.
